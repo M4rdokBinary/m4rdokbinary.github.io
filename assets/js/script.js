@@ -30,7 +30,7 @@ let func = async (dateGuildSince) => {
 fetch(url).then((res) => {
     res.json().then((jsonResponse) => {
         console.log(jsonResponse)
-        document.querySelector("#name").textContent = `${jsonResponse.user.global_name} (@${jsonResponse.user.username})`
+        document.querySelector("#name").textContent = `${jsonResponse.user.global_name}`
         let image = `https://cdn.discordapp.com/avatars/${jsonResponse.user.id}/${jsonResponse.user.avatar}`
         document.querySelector("#photo").src = `${image}`
         func(jsonResponse.premium_guild_since)
